@@ -1,0 +1,40 @@
+.btn,
+.jumbotron,
+.nav :hover {
+  border-radius: 0px;
+}
+
+body {
+  background: #1a1a1d;
+}
+.this {
+  background: #1a1a1d;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.thiss {
+  background-color: #1a1a1d;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.f {
+  background-color: #6f2232;
+}
+footer {
+  /* position: absolute; */
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+.ff {
+  margin-top: auto;
+}
+.Ccate {
+  margin-bottom: 140px;
+}
+.n {
+  margin-bottom: 30px;
+}
+.nn {
+  margin-bottom: 140px;
+}
