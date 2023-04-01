@@ -17,7 +17,7 @@ const stripeRoutes = require("./routes/stripepayment");
 
 //DB Connection
 mongoose
-  .connect(process.env.DATABASE, {
+  .connect("mongodb+srv://rohan:mongodb2023@cluster0.pxgnc2a.mongodb.net/?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
