@@ -6,8 +6,8 @@ import { signin, authenticate, isAuthenticated } from "../auth/helper";
 
 const Signin = () => {
   const [values, setValues] = useState({
-    email: "rohan24@gmail.com",
-    password: "rohan24",
+    email: "rohan@gmail.com",
+    password: "rohan",
     error: "",
     loading: false,
     didRedirect: false,
@@ -25,9 +25,8 @@ const Signin = () => {
     setValues({ ...values, error: false, loading: true });
     signin({ email, password })
       .then((data) => {
-        if (data.error) {
-          setValues({ ...values, error: data.error, loading: false });
-        } else {
+        console.log(data);
+        if(data){
           authenticate(data, () => {
             setValues({
               ...values,
@@ -35,8 +34,10 @@ const Signin = () => {
             });
           });
         }
+        if (data.error) {
+          setValues({ ...values, error: data.error, loading: false });
+        } 
       })
-      .catch(console.log("signin request failed"));
   };
 
   const performRedirect = () => {
