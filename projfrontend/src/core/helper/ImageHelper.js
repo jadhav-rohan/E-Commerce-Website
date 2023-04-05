@@ -10,8 +10,8 @@ const ImageHelper = ({ product }) => {
       <img
         src={imageurl}
         alt="photo"
-        style={{ maxHeight: "100%", maxWidth: "100%" }}
-        className="mb-3 rounded"
+        // style={{ height: "110px", width:"110px" }}
+        className="card-img-top"
       />
     </div>
   );

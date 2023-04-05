@@ -22,13 +22,13 @@ export default function Home() {
   }, []);
 
   return (
-    <Base title="Home Page">
+    <Base title="Home Page" description="All Products">
       <div className="row text-center">
-        <h1 className="text-white">All of T-Shirts</h1>
+        {/* <h1 className="text-white">All of T-Shirts</h1>s */}
         <div className="row">
           {products.map((product, index) => {
             return (
-              <div key={index} className="col-4 mb-4">
+              <div key={index} className="col-4 text-center mb-2 p-5">
                 <Card product={product} />
               </div>
             );

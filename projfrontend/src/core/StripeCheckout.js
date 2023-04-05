@@ -23,7 +23,7 @@ const StripeCheckout = ({
 
   const getFinalPrice = () => {
     let amount = 0;
-    products.map((p) => {
+    products && products.map((p) => {
       amount = amount + p.price;
     });
     return amount;
@@ -72,7 +72,8 @@ const StripeCheckout = ({
 
   return (
     <div>
-      <h3 className="text-white">Stripe Checkout Loaded!{getFinalPrice()}</h3>
+      <h3 className="text-white">Checkout<br/> <br/><span>Total: {getFinalPrice()}</span></h3>
+      <br/>
       {showStripeButton()}
     </div>
   );

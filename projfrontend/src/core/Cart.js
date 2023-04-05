@@ -17,8 +17,9 @@ export default function Cart() {
   const loadAllProducts = () => {
     return (
       <div>
-        <h2>This section is to load products</h2>
-        {products.map((product, index) => (
+        <h2>Items in the Cart</h2>
+        <br/>
+        {products && products.map((product, index) => (
           <Card
             key={index}
             product={product}
