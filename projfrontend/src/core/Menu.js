@@ -12,6 +12,12 @@ const currentTab = (history, path) => {
 };
 
 const Menu = ({ history }) => {
+  const user = isAuthenticated();
+  var role = 0;
+  if(user && user.user && user.user.role){
+    role = user.user.role;
+  }
+  console.log(role)
   return (
     <div>
       <ul className="f nav nav-tabs">
@@ -30,7 +36,7 @@ const Menu = ({ history }) => {
             Cart
           </Link>
         </li>
-
+        {role === 1 &&
         <li className="nav-item">
           <Link
             style={currentTab(history, "/admin/dashboard")}
@@ -40,7 +46,8 @@ const Menu = ({ history }) => {
             A.Dashboard
           </Link>
         </li>
-
+        }
+        {role === 0 && isAuthenticated() && 
         <li className="nav-item">
           <Link
             style={currentTab(history, "/user.dashboard")}
@@ -50,6 +57,7 @@ const Menu = ({ history }) => {
             U.Dashboard
           </Link>
         </li>
+        } 
         {!isAuthenticated() && (
           <Fragment>
             <li className="nav-item">

@@ -3,6 +3,7 @@ import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { getCategories, createaProduct } from "./helper/adminapicall";
 import { isAuthenticated } from "../auth/helper/index";
+import { Spinner } from "react-bootstrap";
 
 const AddProduct = () => {
   const { user, token } = isAuthenticated();
@@ -158,7 +159,7 @@ const AddProduct = () => {
         onClick={onSubmit}
         className="btn btn-outline-success mb-3"
       >
-        Create Product
+        {loading ? <Spinner/> : "Create Product"}
       </button>
     </form>
   );

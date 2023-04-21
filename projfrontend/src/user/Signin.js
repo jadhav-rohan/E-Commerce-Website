@@ -3,8 +3,10 @@ import Base from "../core/Base";
 import { Redirect } from "react-router-dom";
 
 import { signin, authenticate, isAuthenticated } from "../auth/helper";
+import { Spinner } from "react-bootstrap";
 
 const Signin = () => {
+
   const [values, setValues] = useState({
     email: "",
     password: "",
@@ -103,7 +105,7 @@ const Signin = () => {
               />
             </div>
             <button onClick={onSubmit} className="f text-white btn btn-block">
-              Submit
+              {loading ? <Spinner/> : "Sign In"}
             </button>
           </form>
         </div>

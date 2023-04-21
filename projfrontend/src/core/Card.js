@@ -3,6 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { API } from "../backend";
 import { addItemToCart, removeItemFromCart } from "./helper/carthelper";
 // import ImageHelper from "./helper/ImageHelper";
+import Button from 'react-bootstrap/Button';
 import {
 	Image,
 	Card,
@@ -71,34 +72,19 @@ const ProductCard = ({
     : `https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940`;
 
   return (
-    // <div className="card text-white this border ">
-    //   <div className="card-header lead">Product</div>
-    //   <div className="card-body">
-    //     {getARedirect(redirect)}
-    //     {/* <img> */}
-    //     <ImageHelper product={product} />
-    //     {/* </img> */}
-    //     <p className="lead bg-success font-weight-normal text-wrap">
-    //       {cartDescription}
-    //     </p>
-    //     <p className="btn btn-success rounded  btn-sm px-4">${cartPrice}</p>
-    //     <div className="row">
-    //       <div className="col-12">{showAddToCart(addToCart)}</div>
-    //       <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
-    //     </div>
-    //   </div>
-    // </div>
-    <Col class="card col-8">
-      <img src={imageurl} class="card-img-top img-fluid" alt="product"/>
-      <div class="card-body text-dark bg-light">
-        <h5 class="card-title">${cartPrice}</h5>
-        <p class="card-text">{cartDescription}</p>
-        <div className="row">
-          <div className="col-12">{showAddToCart(addToCart)}</div>
-          <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
-         </div>
+    <Card style={{ width: '18rem' }}>
+    <Card.Img variant="top" src={imageurl} />
+    <Card.Body>
+      <Card.Title className="text-dark">$ {cartPrice}</Card.Title>
+      <Card.Text className="text-dark">
+        {cartDescription}
+      </Card.Text>
+      <div className="row">
+        <div className="col-12">{showAddToCart(addToCart)}</div>
+        <div className="col-12">{showRemoveFromCart(removeFromCart)}</div>
       </div>
-    </Col>
+    </Card.Body>
+  </Card>
   );
 };
 

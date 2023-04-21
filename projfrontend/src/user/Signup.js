@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Base from "../core/Base";
 import { Link } from "react-router-dom";
 import { signup } from "../auth/helper";
+import { Spinner } from "react-bootstrap";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false)
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -20,7 +22,7 @@ const Signup = () => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    setValues({ ...values, error: false });
+    setValues({ ...values, error: false, loading: true });
     signup({ name, email, password })
       .then((data) => {
         if (data.error) {
@@ -33,6 +35,7 @@ const Signup = () => {
             password: "",
             error: "",
             success: true,
+            loading: false
           });
         }
       })
@@ -73,7 +76,7 @@ const Signup = () => {
               />
             </div>
             <button onClick={onSubmit} className="f btn btn-block text-white">
-              Submit
+            {loading ? <Spinner/> : "Sign Up"}
             </button>
           </form>
         </div>

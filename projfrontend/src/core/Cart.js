@@ -13,7 +13,7 @@ export default function Cart() {
   useEffect(() => {
     setProducts(loadCart());
   }, [reload]);
-
+  
   const loadAllProducts = () => {
     return (
       <div>
